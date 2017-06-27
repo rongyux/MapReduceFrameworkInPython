@@ -1,0 +1,128 @@
++ CONF_PATH=./conf
++ CONF_FILE=program.conf
++ DO_PATH=./do
++ DO_FILE_NAME=program.do
++ INDEX_FILE=./idx/program.idx
+++ pwd
+++ basename run.sh
++ SHELL_NAME=/home/users/rongyu01/workspcace/ztc/flow-model/5_final_predict/3_format_feat_train/run.sh
+++ basename /home/users/rongyu01/workspcace/ztc/flow-model/5_final_predict/3_format_feat_train/run.sh
++ USAGE='Usage: sh run.sh [-h]    [-p confpath(default:./conf)]    [-f confname(default:program.conf)]    [-i index_file(default:./idx/program.idx)]    [-d do_file(default:./do)]    [-t do_file_name(default:program.do)]'
++ getopts :hp:f:i:d:t: OPTION
++ '[' -z ./conf ']'
++ case ${OPTION} in
++ CONF_PATH=./conf
++ getopts :hp:f:i:d:t: OPTION
++ '[' -z program.conf ']'
++ case ${OPTION} in
++ CONF_FILE=program.conf
++ getopts :hp:f:i:d:t: OPTION
++ '[' -z ./idx/program.idx ']'
++ case ${OPTION} in
++ INDEX_FILE=./idx/program.idx
++ getopts :hp:f:i:d:t: OPTION
++ '[' -z program.do ']'
++ case ${OPTION} in
++ DO_FILE_NAME=program.do
++ getopts :hp:f:i:d:t: OPTION
++ DO_FILE=./do/program.do
++ '[' -f ./do/program.do ']'
++ mkdir -p ./do
++ '[' '!' -f ./do/program.do ']'
++ '[' '!' -f ./idx/program.idx ']'
+++ tail -1 ./idx/program.idx
+++ awk '-F\t' '{print $1}'
++ PRO_DATE=20170407
+++ tail -1 ./idx/program.idx
+++ awk '-F\t' '{print $2}'
++ PRO_HOUR=00
+++ tail -1 ./idx/program.idx
+++ awk '-F\t' '{print $3}'
++ PRO_MIN=00
+++ tail -1 ./idx/program.idx
+++ awk '-F\t' '{print $4}'
++ TRY_TIME=2
+++ tail -1 ./idx/program.idx
+++ awk '-F\t' '{print $5}'
++ STEP=86400
++ '[' -z 20170407 ']'
++ '[' -z 00 ']'
++ '[' -z 00 ']'
++ '[' -z 2 ']'
++ '[' -z 86400 ']'
+++ date '-d20170407 00:00 86400 sec' +%Y%m%d
++ NEXT_DATE=20170408
+++ date '-d20170407 00:00 86400 sec' +%H
++ NEXT_HOUR=00
+++ date '-d20170407 00:00 86400 sec' +%M
++ NEXT_MIN=00
++ '[' '!' -f ./conf/program.conf ']'
++ source ./conf/program.conf
+++ PREFIX_KHAN=hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310
+++ PREFIX_TAIHANG=hdfs://nmg01-taihang-hdfs.dmop.baidu.com:54310
+++ PREFIX_MULAN=hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310
+++ HADOOP=/home/users/rongyu01/hadoop-client/hadoop-client-nmg-mulan/hadoop/bin/hadoop
+++ PROGRAM_NAME=gen-shitu.sh
+++ PV_LOG_PATH[0]='hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/data/fe_divide/20170402/feature/*'
+++ PV_LOG_PATH[1]=hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/lr/lr_model_lite
+++ OUTPUT_PATH=hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/lr/text2weigh
+++ MAP_PROCESS=mapper.sh
+++ REDUCE_PROCESS=reducer.sh
+++ REDUCE_WORKER_NUM=10
+++ JOB_NAME=renfeng01_flowmodel_shitu
+++ D_CONF='-D mapred.job.priority=NORMAL -D mapred.job.map.capacity=400 -D mapred.job.reduce.capacity=97 -D num.key.fields.for.partition=1 -D stream.num.map.output.key.fields=1 -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner '
+++ LOG_PATH=./log
+++ LOG_FILE_NAME=program.log
+++ FUNC_FILE=./func/func.sh
+++ RUN_WARNING_INTER=8
+++ MAX_TRY_TIME=24
+++ ALARM_MAIL=rongyu01@baidu.com
+++ ALARM_MOBILE=
++ '[' 0 -ne 0 ']'
++ '[' -n ./log ']'
++ LOG_PATH=./log
++ '[' -z program.log ']'
++ mkdir -p ./log
++ '[' '!' -d ./log ']'
++ LOG_FILE=./log/program.log
++ source ./func/func.sh
+++ ERR_LIMIT=3
+++ ERR_RETURN=1
+++ IPPORT[0]=tc-sys-monitor00.tc:15003
+++ IPPORT[1]=tc-sys-monitor01.tc:15003
+++ IPPORT[2]=10.23.199.131:15003
++ '[' 0 -ne 0 ']'
++ '[' -z gen-shitu.sh ']'
++ '[' '!' -f gen-shitu.sh ']'
++ source gen-shitu.sh
+++ INPUT_ALL='  -input hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/data/fe_divide/20170402/feature/* '
+++ INPUT_ALL='   -input hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/data/fe_divide/20170402/feature/*  -input hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/lr/lr_model_lite '
+++ loop=2
+++ i=0
+++ /home/users/rongyu01/hadoop-client/hadoop-client-nmg-mulan/hadoop/bin/hadoop fs -rmr hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/lr/text2weigh
+Moved to trash: hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/lr/text2weigh
+++ /home/users/rongyu01/hadoop-client/hadoop-client-nmg-mulan/hadoop/bin/hadoop streaming -D mapred.job.name=shitu_info_model -D mapred.job.priority=NORMAL -D num.key.fields.for.partition=1 -D stream.num.map.output.key.fields=1 -D stream.memory.limit=800 -D mapred.map.tasks=2000 -D mapred.reduce.tasks=500 -D mapred.job.map.capacity=2000 -D mapred.job.reduce.capacity=2000 -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner -input 'hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/data/fe_divide/20170402/feature/*' -input hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/lr/lr_model_lite -output hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/lr/text2weigh -mapper 'python2.7 mapper.py' -reducer 'python2.7 reducer.py' -file ./bin/mapper.py ./bin/reducer.py -file ./data/local_fc_userlist_new.txt
+packageJobJar: [./bin/mapper.py, ./bin/reducer.py, ./data/local_fc_userlist_new.txt] [/home/users/rongyu01/hadoop-client/hadoop-client-nmg-mulan/hadoop/contrib/streaming/hadoop-2-streaming.jar] /tmp/streamjob6522065691510414195.jar tmpDir=null
+17/06/27 15:07:56 INFO mapred.JobClient: class org.apache.hadoop.security.UnixUserGroupInformation
+17/06/27 15:07:56 INFO mapred.JobClient: class org.apache.hadoop.security.UnixUserGroupInformation
+17/06/27 15:07:56 INFO hdfs.FMSClient: Write 27866025352340908 in pipeline 10.75.69.22:7001, 10.75.35.37:7001, 10.75.54.40:7001, 10.75.22.51:7001, 10.73.249.15:7001, 10.73.77.50:7001, 10.73.30.11:7001, 10.73.30.16:7001, 10.73.74.25:7001, 10.73.116.45:7001
+17/06/27 15:07:57 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+17/06/27 15:07:57 INFO compress.LzoCodec: Successfully loaded & initialized native-lzo library
+17/06/27 15:07:57 INFO compress.LzmaCodec: Successfully loaded & initialized native-lzma library
+17/06/27 15:07:57 INFO compress.QuickLzCodec: Successfully loaded & initialized native-quicklz library
+17/06/27 15:07:57 INFO mapred.FileInputFormat: getInputPaths: dirs: hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/data/fe_divide/20170402/feature/*,hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/ecom/fcr-model/rongyu01/flow_model/lr/lr_model_lite
+17/06/27 15:08:00 INFO mapred.FileInputFormat: Total input paths to process : 301
+17/06/27 15:08:00 WARN mapred.FileInputFormat: Split size is optimized by default, you can set 'abaci.split.optimize.enable=false' to skip it
+17/06/27 15:08:06 INFO hdfs.FMSClient: Write 21110625911879177 in pipeline 10.73.31.11:7001, 10.73.178.49:7001, 10.75.52.39:7001
+17/06/27 15:08:06 INFO mapred.JobClient: splits size : 302
+17/06/27 15:08:07 INFO hdfs.FMSClient: Write 37717649204842465 in pipeline 10.73.32.48:7001, 10.73.117.15:7001, 10.75.74.34:7001
+17/06/27 15:08:07 INFO split.SplitUtils: create hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310/app/dc/deva/system/mapred/job_20170531134023_536583/split.done
+17/06/27 15:08:07 INFO hdfs.FMSClient: Write 28991924926604856 in pipeline 10.75.71.49:7001, 10.73.105.22:7001, 10.73.87.39:7001
+17/06/27 15:08:07 INFO mapred.JobClient: Running job: job_20170531134023_536583
+17/06/27 15:08:07 INFO mapred.JobClient: To kill this job, run:
+17/06/27 15:08:07 INFO mapred.JobClient: /home/users/rongyu01/hadoop-client/hadoop-client-nmg-mulan/hadoop/bin/../bin/hadoop job -Dmapred.job.tracker=nmg01-mulan-job.dmop.baidu.com:54311 -kill job_20170531134023_536583
+17/06/27 15:08:07 INFO mapred.JobClient: Tracking URL: http://nmg01-mulan-mapred11.nmg01.baidu.com:8067/jobproxy.jsp?jobid=job_20170531134023_536583
+17/06/27 15:08:28 INFO mapred.JobClient: Total split num: 302
+17/06/27 15:08:28 INFO mapred.JobClient: Total split size: 92751 (bytes)
+17/06/27 15:08:28 INFO mapred.JobClient: Total split time: 9814 (ms)
+17/06/27 15:08:29 INFO mapred.JobClient:  map 0% reduce 0%
